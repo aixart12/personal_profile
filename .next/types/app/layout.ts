@@ -1,4 +1,4 @@
-// File: /home/dhruv/Desktop/dhruv/profile/portfolio-website/app/layout.tsx
+// File: /home/none/Desktop/dhruv/personal_profile/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

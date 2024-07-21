@@ -78,6 +78,14 @@ export const experiencesData = [
     icon: React.createElement(FaReact),
     date: "Feb 2023 - Present",
   },
+  {
+    title: "Software Developer",
+    location: "Geekomony  , Bangalore",
+    description:
+      "As a team lead, I manage client interactions, breaking down their needs into clear requirements.Creating pixel-perfect UIs in React, integrating email functionalities, and designing and developing robustback-end systems.",
+    icon: React.createElement(FaReact),
+    date: "Feb 2023 - Present",
+  },
 ] as const;
 
 export const projectsData = [

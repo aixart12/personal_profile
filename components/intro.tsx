@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
@@ -10,9 +10,30 @@ import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 
+const calculateExperience = (startDate : any) => {
+  const start = new Date(startDate);
+  const now = new Date();
+  let years = now.getFullYear() - start.getFullYear();
+  let months = now.getMonth() - start.getMonth();
+
+  if (months < 0) {
+    years -= 1;
+    months += 12;
+  }
+
+  return `${years} years ${months} months`;
+};
+
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+
+  const [experience, setExperience] = useState("");
+
+  useEffect(() => {
+    const startDate = "2022-04-01"; // Replace with your start date
+    setExperience(calculateExperience(startDate));
+  }, []);
 
   return (
     <section
@@ -64,7 +85,7 @@ export default function Intro() {
       >
         <span className="font-bold">Hello, I'm Dhruv.</span> I'm a{" "}
         <span className="font-bold">full-stack developer</span> with{" "}
-        <span className="font-bold">2 years</span> of experience. I enjoy
+        <span className="font-bold">{experience}</span> of experience. I enjoy
         building <span className="italic">sites & apps</span>. My focus is{" "}
         <span className="underline">Building Gen AI Product</span>.
       </motion.h1>
@@ -91,7 +112,7 @@ export default function Intro() {
 
         <a
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-          href="/Dhruv_Kumar_Resume_May.pdf"
+          href="/Dhruv_Kumar_Resume.pdf"
           download
         >
           Download CV{" "}
