@@ -24,6 +24,10 @@ export const links = [
     hash: "#about",
   },
   {
+    name: "Schedule Metting",
+    hash: "#cal",
+  },
+  {
     name: "Blogs",
     hash: "#blogs",
   },

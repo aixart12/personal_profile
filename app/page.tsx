@@ -1,5 +1,6 @@
 import About from "@/components/about";
 import { Blogs } from "@/components/blogs";
+import CalCalender from "@/components/cal-calender";
 import { CustomeCarousel } from "@/components/carousel";
 import Contact from "@/components/contact";
 import Experience from "@/components/experience";
@@ -14,6 +15,7 @@ export default function Home() {
       <Intro />
       <SectionDivider />
       <About />
+      <CalCalender />
       <Blogs />
       <Projects />
       <Skills />
